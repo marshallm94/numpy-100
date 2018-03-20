@@ -11,57 +11,75 @@ If you find an error or think you've a better way to solve some of them, feel
 free to open an issue at <https://github.com/rougier/numpy-100>
 
 #### 1. Import the numpy package under the name `np` (★☆☆)
-
-
-
+```python
+import numpy as np
+```
 #### 2. Print the numpy version and the configuration (★☆☆)
-
-
-
+```python
+np.__version__
+np.show_config
+```
 #### 3. Create a null vector of size 10 (★☆☆)
-
-
-
+```python
+np.zeros(10)
+```
 #### 4.  How to find the memory size of any array (★☆☆)
-
-
-
+```python
+x = np.zeros(10)
+x.itemsize
+```
 #### 5.  How to get the documentation of the numpy add function from the command line? (★☆☆)
-
-
-
+```python
+np.sum?
+np.info(add)
+```
 #### 6.  Create a null vector of size 10 but the fifth value which is 1 (★☆☆)
-
-
-
+```python
+x = np.zeros(10)
+x[4] = 1
+print(x)
+```
 #### 7.  Create a vector with values ranging from 10 to 49 (★☆☆)
-
-
-
+```python
+x = np.arange(10,50)
+print(x)
+```
 #### 8.  Reverse a vector (first element becomes last) (★☆☆)
-
-
-
+```python
+x = np.arange(1, 11)
+print(x)
+x = x[::-1]
+print(x)
+```
 #### 9.  Create a 3x3 matrix with values ranging from 0 to 8 (★☆☆)
-
-
-
+```python
+x = np.array(np.arange(0, 9)).reshape(3,3)
+print(x)
+```
 #### 10. Find indices of non-zero elements from \[1,2,0,0,4,0\] (★☆☆)
-
-
-
+```python
+x = [1,2,0,0,4,0]
+np.nonzero(x)
+```
 #### 11. Create a 3x3 identity matrix (★☆☆)
-
-
-
+```python
+x = np.identity(3)
+print(x)
+```
 #### 12. Create a 3x3x3 array with random values (★☆☆)
-
-
-
+```python
+x = np.random.random((3,3,3))
+print(x)
+```
 #### 13. Create a 10x10 array with random values and find the minimum and maximum values (★☆☆)
-
-
-
+```python
+x = np.random.random((10,10))
+x.max()
+x.min()
+# OR
+x.flatten()[np.argmax(x)]
+x.flatten()[np.argmin(x)]
+```
 #### 14. Create a random vector of size 30 and find the mean value (★☆☆)
 
 
@@ -442,4 +460,3 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 
 
 #### 100. Compute bootstrapped 95% confidence intervals for the mean of a 1D array X (i.e., resample the elements of an array with replacement N times, compute the mean of each sample, and then compute percentiles over the means). (★★★)
-
