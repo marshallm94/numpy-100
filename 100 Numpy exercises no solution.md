@@ -81,40 +81,47 @@ x.flatten()[np.argmax(x)]
 x.flatten()[np.argmin(x)]
 ```
 #### 14. Create a random vector of size 30 and find the mean value (★☆☆)
-
-
-
-#### 15. Create a 2d array with 1 on the border and 0 inside (★☆☆)
-
-
-
-#### 16. How to add a border (filled with 0's) around an existing array? (★☆☆)
-
-
-
-#### 17. What is the result of the following expression? (★☆☆)
-
-
 ```python
-0 * np.nan
-np.nan == np.nan
-np.inf > np.nan
-np.nan - np.nan
-0.3 == 3 * 0.1
+x = np.random.random(30)
+x.mean()
+# OR
+np.mean(x)
+```
+#### 15. Create a 2d array with 1 on the border and 0 inside (★☆☆)
+```python
+x = np.ones((5,5))
+x[1:-1, 1:-1] = 0
+print(x)
+```
+#### 16. How to add a border (filled with 0's) around an existing array? (★☆☆)
+```python
+x = np.random.random((3,3))
+np.pad(x, 1, "constant", constant_values=0)
+print(x)
+```
+#### 17. What is the result of the following expression? (★☆☆)
+```python
+0 * np.nan # nan
+np.nan == np.nan # false
+np.inf > np.nan # false
+np.nan - np.nan # nan
+0.3 == 3 * 0.1 # false
 ```
 
 #### 18. Create a 5x5 matrix with values 1,2,3,4 just below the diagonal (★☆☆)
-
-
-
+```python
+x = np.diag(1 * np.arange(1,5), k = -1)
+print(x)
+```
 #### 19. Create a 8x8 matrix and fill it with a checkerboard pattern (★☆☆)
-
-
-
+```python
+x = np.zeros((8,8))
+x[1:]
+```
 #### 20. Consider a (6,7,8) shape array, what is the index (x,y,z) of the 100th element?
-
-
-
+```python
+np.unravel_index(100, (6,7,8))
+```
 #### 21. Create a checkerboard 8x8 matrix using the tile function (★☆☆)
 
 
